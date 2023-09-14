@@ -3,45 +3,31 @@
     padding: 0;
 }
 
-.containers{
-    width: 100%;
-    display: flex;
-    position: fixed;
-   
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #B1CDE6;
 }
-.container-logo{
-    width: 50%;
-    height: 6rem;
-    background-color: #B1CDE6;
-    display: flex;
-    align-items: center;
-    font-size: 27px;
-    padding-left:8rem ;
-    
+
+.logo {
+  font-size: 40px;
+  padding-left: 7rem;
 }
-.container-barra{
-    width: 50%;
-    height: 6rem;
-    background-color: #B1CDE6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22.5px;
-    
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 3rem;
 }
-.container-barra li{
-    list-style: none;
-    display:inline-block ;
+.nav-list li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
 }
-.container-barra li a{
-    text-decoration: none;
-    color: black;
-    padding: 1rem;
-}
-.container-barra * li:hover{
- background-color: #31b0eb;
- border-radius: 5px;
- padding: 0.3rem;
+.abrir-menu,
+.cerrar-menu {
+    display: none;
 }
 .profile{
     width: 100%;
@@ -54,6 +40,12 @@
     margin-top: 3rem;
     margin-left: 8rem;
     font-size: 25px;
+}
+.num4{
+  color: rgb(39, 35, 35);
+}
+.num5{
+  color: white;
 }
 .profile > .imagen{
     width: 50%;
@@ -170,7 +162,7 @@
 
 }
 .unfolds1{
-  height: 40rem;
+  height: 30rem;
 }
 .title{
   font-size: 50px;
@@ -365,7 +357,41 @@
   padding-left: 1rem;
 }
 
+@media  (max-width:1279px) {
 
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+  }
+  .services{
+    display: flex;
+  
+  }
+  .services1{
+    font-size: 0.5px;
+  }
+  .container1{
+  width: 20rem;
+  height: 35rem;
+  }
+  .btn{
+margin-left: 2rem;
+margin-top: 2rem;
+  }
+  .unfolds1{
+    height: auto;
+  }
+  .img-container > .imgg{
+  display: flex;
+  width: 18rem;
+  height: 12rem;
+  margin-bottom: 2rem;
+
+  }
+}
 
 @media (max-width:920px){
   .containers{
@@ -414,22 +440,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .container1 > .order1{
     font-size: 24px;
 }.title {
   font-size: 50px;
   text-align: center;
-  
+  height: 3rem;
+  width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
  
-}.unfolds1{
- height: auto;
-}.imagenes {
+}
+.imagenes {
   display: flex;
  flex-direction: column;
-  margin-top: 1.5rem;
+  margin-top: 5rem;
 
 }.imgg {
   width: 20rem;
@@ -473,26 +500,56 @@
 }
 }
 @media (max-width:768px){
-  .containers{
-    display: flex;
-    flex-direction: column;
+  .abrir-menu,
+  .cerrar-menu {
+      display: block;
+      border: 0;
+      font-size: 1.25rem;
+      background-color: transparent;
+      cursor: pointer;
   }
-  .container-logo{
-  width: auto;
-  display: flex;
-  align-items: center
+
+  .abrir-menu {
+      color: #1c1c1c;
   }
-  .container-barra{
-    font-size: 18px;
-    padding-left: 5px;
-    padding-bottom: 0.3rem;
-    width: auto;
-    height: auto;
+
+  .cerrar-menu {
+      color: #ececec;
   }
-  .container-barra li a{
-    padding: 0.5rem;
-    padding-top: 1rem;
-  } 
+
+  .nav {
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: rgb(51, 49, 49);
+      padding: 1rem;
+      width: 22.5%;
+  }
+
+  .nav.visible {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .nav-list {
+      flex-direction: column;
+      align-items: end;
+  }
+
+  .nav-list li a {
+      color: #ecececec;
+  }
+  .icono{
+    color: #000000;
+    width: 2rem;
+    height: 2rem; 
+  }
   .container1 > .order1{
     font-size: 24px;
 }.services{
@@ -590,24 +647,34 @@
     display: flex;
     flex-direction: column;
   }
-  .container-logo{
+
+  .logo{
     width: auto;
     display: flex;
-    padding-left: 9rem;
+    padding-left: 3rem;
     }
     .profile >.description{
       width: 50%;
       padding: 0;
       margin-top: 3rem;
-      margin-left: 2rem
+      margin-left: 2rem;
+      font-size: 20px;
     } 
     .profile{
       width: 100%;
       display: flex;
-      justify-content: end;
+      flex-direction: column;
     } 
+    .profile > .description{
+      width: auto;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
     .profile > .imagen .img1{
-      height: 10rem;
-      width: 10rem;
+      height: 12rem;
+      width: 12rem;
+      margin-top: 2rem;
+      margin-bottom:2rem ;
+    
     }
 }
